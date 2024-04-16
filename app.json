@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "dokku": {
+      "predeploy": "cd src && python -m pretalx rebuild"
+    }
+  },
   "healthchecks": {
     "web": [
       {
