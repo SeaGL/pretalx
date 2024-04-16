@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "dokku": {
+      "postdeploy": "./src/manage.py rebuild"
+    }
+  },
   "healthchecks": {
     "web": [
       {
