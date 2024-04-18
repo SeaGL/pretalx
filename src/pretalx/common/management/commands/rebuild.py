@@ -42,6 +42,7 @@ class Command(BaseCommand):
         call_command(
             "collectstatic", verbosity=silent, interactive=False, clear=options["clear"]
         )
+        print('collectstatic')
         with override_settings(_VITE_IGNORE=True):
             frontend_dir = (
                 Path(__file__).parent.parent.parent.parent / "frontend/schedule-editor/"
@@ -49,9 +50,14 @@ class Command(BaseCommand):
             env = os.environ.copy()
             env["OUT_DIR"] = str(settings.STATIC_ROOT)
             env["BASE_URL"] = settings.STATIC_URL
+            print('npm check')
             if options["npm_install"] or not (frontend_dir / "node_modules").exists():
+                print('npm ci')
                 subprocess.check_call(["npm", "ci"], cwd=frontend_dir)
+            print('npm run build')
             subprocess.check_call(["npm", "run", "build"], cwd=frontend_dir, env=env)
+            print('end build')
+        print('compress')
         call_command("compress", verbosity=silent)
 
         # This fails if we don't have db access, which is fine
