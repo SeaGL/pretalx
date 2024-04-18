@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dokku": {
-      "predeploy": "cd src && python -m pretalx compress && pushd pretalx/frontend/schedule-editor/ && npm install && popd && python -m pretalx rebuild"
+      "predeploy": "set -x; cd src && pushd pretalx/frontend/schedule-editor/ && npm ci --include dev && popd && ls -la pretalx/frontend/schedule-editor/node_modules/.bin && python -m pretalx rebuild"
     }
   },
   "healthchecks": {
