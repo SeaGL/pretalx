@@ -13,5 +13,15 @@
         "attempts": 3
       }
     ]
-  }
+  },
+  "cron": [
+    {
+      "command": "cd src && python -m pretalx runperiodic",
+      "schedule": "*/5 * * * *"
+    },
+    {
+      "command": "cd src && python -m pretalx clearsessions",
+      "schedule": "@monthly"
+    }
+  ]
 }
