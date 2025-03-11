@@ -8,7 +8,7 @@
     "web": [
       {
         "type": "startup",
-        "path": "/static/popper.js.map",
+        "path": "/static/orga/js/main.js",
         "initialDelay": 5,
         "attempts": 3
       }
