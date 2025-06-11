@@ -67,9 +67,6 @@ static.sdist/
 doc/_build/
 *.toc
 
-# pyenv
-.python-version
-
 # Environments
 .env
 .venv
