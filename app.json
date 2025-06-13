@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dokku": {
-      "predeploy": "set -x; cd src && pushd pretalx/frontend/schedule-editor/ && npm ci --include dev && popd && ls -la pretalx/frontend/schedule-editor/node_modules/.bin && python -m pretalx rebuild"
+      "predeploy": "env --chdir src/pretalx/frontend/schedule-editor npm ci --include dev && env --chdir src --unset PRETALX_DATA_DIR python -m pretalx rebuild"
     }
   },
   "healthchecks": {
@@ -16,11 +16,11 @@
   },
   "cron": [
     {
-      "command": "cd src && python -m pretalx runperiodic",
+      "command": "env --chdir src python -m pretalx runperiodic --no-pretalx-information",
       "schedule": "*/5 * * * *"
     },
     {
-      "command": "cd src && python -m pretalx clearsessions",
+      "command": "env --chdir src python -m pretalx clearsessions --no-pretalx-information",
       "schedule": "@monthly"
     }
   ]
