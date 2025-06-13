@@ -16,11 +16,11 @@
   },
   "cron": [
     {
-      "command": "cd src && python -m pretalx runperiodic",
+      "command": "env --chdir src python -m pretalx runperiodic",
       "schedule": "*/5 * * * *"
     },
     {
-      "command": "cd src && python -m pretalx clearsessions",
+      "command": "env --chdir src python -m pretalx clearsessions",
       "schedule": "@monthly"
     }
   ]
