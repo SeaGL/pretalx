@@ -47,7 +47,7 @@ lxml==6.0.0
 Markdown==3.8.2
 more-itertools==10.7.0
 packaging==25.0
-pillow==11.2.1
+pillow==11.3.0
 prompt_toolkit==3.0.51
 psycopg2-binary==2.9.10
 publicsuffixlist==1.0.2.20250708
