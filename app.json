@@ -8,7 +8,7 @@
     "web": [
       {
         "type": "startup",
-        "path": "/static/orga/js/main.js",
+        "path": "/healthcheck/",
         "initialDelay": 5,
         "attempts": 3
       }
