@@ -20,4 +20,5 @@ jobs:
         with:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           git_remote_url: 'ssh://dokku@dokku.host.seagl.org/pretalx'
+          git_push_flags: '--force'
           branch: main
