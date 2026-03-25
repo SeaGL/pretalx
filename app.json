@@ -5,14 +5,7 @@
     }
   },
   "healthchecks": {
-    "web": [
-      {
-        "type": "startup",
-        "path": "/healthcheck/",
-        "initialDelay": 15,
-        "attempts": 5
-      }
-    ]
+    "web": []
   },
   "cron": [
     {
